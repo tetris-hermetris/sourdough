@@ -1,6 +1,7 @@
 (ns sourdough.core
   (:require [clojure.pprint :as pprint]
-            [clojure.java.io :as io]))
+            [clojure.java.io :as io])
+  (:gen-class))
 
 (defn how-much-with-starter [starter]
   (let
@@ -19,5 +20,7 @@
         "вес хлеба"weight}]))
   )
 
+(defn -main [& args]
+  (-> args first Double/parseDouble how-much-with-starter))
 
 ;; (how-much-with-starter 41)
